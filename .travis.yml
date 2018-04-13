@@ -1,0 +1,7 @@
+install:
+        - wget --user alumne --password alumne http://docencia.ac.upc.edu/FIB/grau/PEC/Protegido/Documentacion/eines-sisa-64BITS.tgz
+        - tar -xf eines-sisa-64BITS.tgz
+        - export PATH=$PATH:$(pwd)/eines-sisa/bin
+script:
+        - chmod +x ./compile_to_hex.sh
+        - ./compile_to_hex.sh

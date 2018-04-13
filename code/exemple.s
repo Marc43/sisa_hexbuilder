@@ -1,0 +1,6 @@
+movi r5, 0x00
+movhi r5, 0xFF
+movi r4, 0xFF
+movhi r4, 0x00
+add r5, r5, r4
+halt

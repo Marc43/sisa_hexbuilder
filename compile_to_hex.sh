@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p $(pwd)/hex
+
 for filename in $(pwd)/code/*.s; do
 	n=${filename%%.*}
 	subname=${filename##*/}

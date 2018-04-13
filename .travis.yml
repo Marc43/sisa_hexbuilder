@@ -6,6 +6,7 @@ script:
 - chmod +x ./compile_to_hex.sh
 - "./compile_to_hex.sh"
 before_deploy:
+- rm -rf eines-sisa*
 - git config --local user.name "Marc43"
 - git config --local user.email "marcdominguezr@gmail.com"
 - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
@@ -17,3 +18,6 @@ deploy:
   file: hex/*
   on:
     repo: Marc43/sisa_hexbuilder
+    branches:
+        only:
+         - master

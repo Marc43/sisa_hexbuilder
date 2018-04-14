@@ -19,10 +19,8 @@ deploy:
   file: $TRAVIS_BUILD_DIR/hex/*
   on:
     repo: Marc43/sisa_hexbuilder
-    branches:
-      only:
-      - master
-after_success:  
+after_success: 
+  - rm -rf $TRAVIS_BUILD_DIR/tmp/
   - git config --local user.name "Marc43"
   - git config --local user.email "marcdominguezr@gmail.com"
   - git add $TRAVIS_BUILD_DIR/hex/*

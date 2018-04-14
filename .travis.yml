@@ -20,12 +20,9 @@ after_success:
 before_deploy:
 - rm -rf eines-sisa*
 deploy:
-  provider: script
+  provider: releases
   skip_cleanup: true
   overwrite: true
   file: $TRAVIS_BUILD_DIR/hex/*
   on:
     repo: Marc43/sisa_hexbuilder
-    branches:
-      only:
-      - master

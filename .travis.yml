@@ -1,5 +1,5 @@
 install:
-- wget --user alumne --password alumne http://docencia.ac.upc.edu/FIB/grau/PEC/Protegido/Documentacion/eines-sisa-64BITS.tgz
+- wget --user $docencia_ac_username --password $docencia_ac_password http://docencia.ac.upc.edu/FIB/grau/PEC/Protegido/Documentacion/eines-sisa-64BITS.tgz
 - tar -xf eines-sisa-64BITS.tgz
 - export PATH=$PATH:$(pwd)/eines-sisa/bin
 script:
@@ -22,3 +22,4 @@ deploy:
     branches:
         only:
          - master
+  script: deploy.sh

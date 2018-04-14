@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 mkdir -p $(pwd)/hex
 
 for filename in $(pwd)/code/*.s; do

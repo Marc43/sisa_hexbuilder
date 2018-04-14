@@ -22,6 +22,7 @@ deploy:
     branches:
       only:
       - master
+after_success:  
   - git remote
   - git config --local user.name "Marc43"
   - git config --local user.email "marcdominguezr@gmail.com"

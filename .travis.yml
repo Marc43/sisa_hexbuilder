@@ -10,6 +10,13 @@ install:
 script:
 - chmod +x ./compile_to_hex.sh
 - "./compile_to_hex.sh"
+after_success: 
+  - rm -rf $TRAVIS_BUILD_DIR/tmp/
+  - git config --local user.name "Marc43"
+  - git config --local user.email "marcdominguezr@gmail.com"
+  - git add $TRAVIS_BUILD_DIR/hex/*
+  - git commit -m "At $(date) hex files builded - travis-ci [skip ci]"
+  - git push git@github.com:Marc43/sisa_hexbuilder.git master > /dev/null 2>&1 
 before_deploy:
 - rm -rf eines-sisa*
 deploy:
@@ -19,10 +26,6 @@ deploy:
   file: $TRAVIS_BUILD_DIR/hex/*
   on:
     repo: Marc43/sisa_hexbuilder
-after_success: 
-  - rm -rf $TRAVIS_BUILD_DIR/tmp/
-  - git config --local user.name "Marc43"
-  - git config --local user.email "marcdominguezr@gmail.com"
-  - git add $TRAVIS_BUILD_DIR/hex/*
-  - git commit -m "At $(date) hex files builded - travis-ci [skip ci]"
-  - git push git@github.com:Marc43/sisa_hexbuilder.git master > /dev/null 2>&1 
+    branches:
+      only:
+      - master

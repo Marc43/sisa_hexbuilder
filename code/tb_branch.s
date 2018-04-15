@@ -1,0 +1,3 @@
+movi r1, 0x00
+movi r2, 0x00
+halt
